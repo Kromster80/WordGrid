@@ -1,2 +1,2 @@
 # WordGrid
-Word grid generator
+Word grid generator (for word clock, inspired by the Qlocktwo)
