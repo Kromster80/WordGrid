@@ -2,13 +2,16 @@ program WordGrid;
 uses
   Vcl.Forms,
   UnitGenerator in 'UnitGenerator.pas',
-  UnitForm in 'UnitForm.pas' {Form6};
+  UnitForm in 'UnitForm.pas' {FormWordGrid};
 
 {$R *.res}
+
+var
+  FormWordGrid: TFormWordGrid;
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm6, Form6);
+  Application.CreateForm(TFormWordGrid, FormWordGrid);
   Application.Run;
 end.

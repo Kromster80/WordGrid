@@ -7,7 +7,7 @@ uses
   UnitGenerator;
 
 type
-  TForm6 = class(TForm)
+  TFormWordGrid = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
     Panel1: TPanel;
@@ -29,15 +29,13 @@ type
     procedure DisplayGrid;
   end;
 
-var
-  Form6: TForm6;
 
 implementation
 
 {$R *.dfm}
 
 
-procedure TForm6.FormCreate(Sender: TObject);
+procedure TFormWordGrid.FormCreate(Sender: TObject);
 begin
   Randomize;
 
@@ -45,19 +43,19 @@ begin
 end;
 
 
-procedure TForm6.FormDestroy(Sender: TObject);
+procedure TFormWordGrid.FormDestroy(Sender: TObject);
 begin
   FreeAndNil(fGenerator);
 end;
 
 
-procedure TForm6.Timer1Timer(Sender: TObject);
+procedure TFormWordGrid.Timer1Timer(Sender: TObject);
 begin
   Label4.Caption := Format('%d/%d', [fGenerator.IterationsDone, fGenerator.IterationsTotal]);
 end;
 
 
-procedure TForm6.btnGenerateNewClick(Sender: TObject);
+procedure TFormWordGrid.btnGenerateNewClick(Sender: TObject);
 begin
   FreeAndNil(fGenerator);
   fGenerator := TGridGenerator.Create(
@@ -73,13 +71,13 @@ begin
 end;
 
 
-procedure TForm6.btnImprove10Click(Sender: TObject);
+procedure TFormWordGrid.btnImprove10Click(Sender: TObject);
 begin
   fGenerator.Improve(1000000);
 end;
 
 
-procedure TForm6.DisplayGrid;
+procedure TFormWordGrid.DisplayGrid;
 var
   I, K: Integer;
   lbl: TLabel;

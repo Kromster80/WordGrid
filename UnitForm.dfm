@@ -1,4 +1,4 @@
-object Form6: TForm6
+object FormWordGrid: TFormWordGrid
   Left = 0
   Top = 0
   Caption = 'WordGrid'

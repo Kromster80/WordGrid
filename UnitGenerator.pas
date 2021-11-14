@@ -36,6 +36,7 @@ type
   public
     fBestGrid: array of array of TGridLetter;
     constructor Create(aGridSizeX, aGridSizeY: Integer; aMode: TFillMode; aOnBetter: TProc);
+    destructor Destroy; override;
     procedure Improve(aCount: Integer);
     property GridSizeX: Integer read fGridSizeX;
     property GridSizeY: Integer read fGridSizeY;
@@ -121,6 +122,17 @@ begin
   fWordList[6].Add('минут');
   fWordList[6].Add('минута');
   fWordList[6].Add('минуты');
+end;
+
+
+destructor TGridGenerator.Destroy;
+var
+  I: Integer;
+begin
+  for I := 0 to High(fWordList) do
+    fWordList[I].Free;
+
+  inherited;
 end;
 
 
